@@ -27,17 +27,22 @@ void main() {
 class DicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const Row(
-      children: [
-        Image(
-          image: AssetImage("images/dice1.png"),
-          width: 200.0,
-        ),
-        Image(
-          image: AssetImage("images/dice2.png"),
-          width: 200.0,
-        ),
-      ],
+    return Center(
+      child: Row(
+        children: [
+          Expanded(
+            child: TextButton(
+                onPressed: () {}, child: Image.asset("images/dice1.png")),
+          ),
+          Expanded(
+            child: TextButton(
+                onPressed: () {
+                  print("Right button got pressed");
+                },
+                child: Image.asset("images/dice2.png")),
+          ),
+        ],
+      ),
     );
   }
 }
